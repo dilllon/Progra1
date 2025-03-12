@@ -16,15 +16,13 @@ def calcularMCD(n1, n2):
 def main():
     n1 = int(input("Ingrese el primer valor: "))
     while n1 <= 0:
-        if n1 <= 0:
-            print("Ingrese un número válido. ")
-            n1 = int(input("Ingrese el primer valor: "))
+        print("Ingrese un número válido. ")
+        n1 = int(input("Ingrese el primer valor: "))
     
     n2 = int(input("Ingrese el segundo valor: "))
     while n1 <= 0:
-        if n2 <= 0:
-            print("Ingrese un número válido. ")
-            n2 = int(input("Ingrese el segundo valor: "))
+        print("Ingrese un número válido. ")
+        n2 = int(input("Ingrese el segundo valor: "))
 
     resultado = calcularMCD(n1, n2)
     print("El MCD de ", n1, "y ", n2, "es: ", resultado)
