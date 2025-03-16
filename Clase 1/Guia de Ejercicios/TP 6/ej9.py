@@ -7,6 +7,21 @@
 dias30 = [4, 6, 9, 11]
 dias31 = [1, 3, 5, 7, 8, 10, 12]
 
+def compararFechas():
+    x = 0
+
+def diasHastaFecha(dd, mm, yyyy):
+    contd = dd
+    mes = 1
+    for mes in range(1, mm):
+        if mes in dias30:
+            contd += 30
+        elif mes in dias31:
+            contd += 31
+        else:
+            contd += 29 if esBisiesto(yyyy) == True else 28
+    return contd
+
 def calcularFinDeAño(fdm, mm, yyyy):
     contd = fdm
     mes = mm
@@ -19,7 +34,6 @@ def calcularFinDeAño(fdm, mm, yyyy):
             contd += 29 if esBisiesto(yyyy) == True else 28
     return contd
 
-
 def calcularFinDeMes(dd, dias):
     resultado = dias - dd
     return resultado
@@ -30,7 +44,7 @@ def esBisiesto(yyyy):
     else: 
         return False
 
-def ingresarFecha():
+def main():
     yyyy = int(input("Ingrese el número del año: "))
     while yyyy <= 0:
         print("Ingrese un año válido.")
@@ -56,11 +70,8 @@ def ingresarFecha():
     while dd < 1 or dd > dias:
         print("Ingrese una día válido.")
         dd = int(input("Ingrese el número del día: "))
-    
-    return dd, mm, yyyy, dias
 
-def main():
-    dd, mm, yyyy, dias = ingresarFecha()
+
     print(f"La fecha seleccionada es: {dd}/{mm}/{yyyy}")
 
     fdm = calcularFinDeMes(dd, dias)
@@ -68,5 +79,10 @@ def main():
 
     fda = calcularFinDeAño(fdm, mm, yyyy)
     print(f"Faltan {fda} días para que termine el año")
+
+    dhf = diasHastaFecha(dd, mm, yyyy)
+    print(f"Transcurrieron {dhf} hasta la fecha introducida.")
+    
+    
 
 main()
