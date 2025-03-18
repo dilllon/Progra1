@@ -7,8 +7,9 @@
 dias30 = [4, 6, 9, 11]
 dias31 = [1, 3, 5, 7, 8, 10, 12]
 
-def compararFechas():
-    x = 0
+def compararFechas(dd, mm, yyyy):
+    fecha1 = dd, mm, yyyy
+    fecha2 = main()
 
 def diasHastaFecha(dd, mm, yyyy):
     contd = dd
